@@ -8,16 +8,17 @@
             <%= image_tag @movie.image, class: "img-thumbnail rounded mx-auto d-block" %>
             <ul class="list-group list-group list-group-flush mt-1">
               <li class="list-group-item">
-                劇情：<%= @movie.description %>
+                <div class="star-rating" data-score= <%= @avg_review %> ></div>
+                <em><%= "#{@reviews.length} reviews" %></em>
               </li>
               <li class="list-group-item">
-                片長：<%= @movie.movie_length %>
+                劇情：<%= @movie.description %>
               </li>
               <li class="list-group-item">
                 導演：<%= @movie.director %>
               </li>
               <li class="list-group-item">
-                評分：<%= @movie.rating %>
+                片長：<%= @movie.movie_length %>
               </li>
             </ul>
           </div>
