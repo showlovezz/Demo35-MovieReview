@@ -1,12 +1,15 @@
 <section id="section_movie_show">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 offset-md-1">
+      <div class="col-md-12">
 
         <div class="row">
           <div class="col-md-5">
             <%= image_tag @movie.image, class: "img-thumbnail rounded mx-auto d-block" %>
             <ul class="list-group list-group list-group-flush mt-1">
+              <li class="list-group-item">
+                劇情：<%= @movie.description %>
+              </li>
               <li class="list-group-item">
                 片長：<%= @movie.movie_length %>
               </li>
@@ -24,6 +27,12 @@
             <%= render "reviews/form_review" %>
           </div>
         </div>
+        <% if user_signed_in? %>
+          <div class="links text-center">
+            <%= link_to "Edit", edit_movie_path, class: "color-word" %> |
+            <%= link_to "Delete" , movie_path, method: :delete, data: {confirm: "Are you sure?"}, class: "color-word" %>
+          </div>
+        <% end %>
 
       </div>
     </div>

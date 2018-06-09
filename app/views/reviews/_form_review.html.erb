@@ -11,4 +11,6 @@
       <%= f.button "Cancel", type: :reset, class: "btn btn-secondary btn-sm" %>
     </div>
   <% end %>
+<% else %>
+  <%= link_to "Write Review", new_user_session_path, class: "btn btn-warning mt-2" %>
 <% end %>

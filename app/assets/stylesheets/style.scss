@@ -64,7 +64,7 @@ nav {
 // show
 #section_movie_show {
   .row {
-    .col-md-10 {
+    .col-md-12 {
       .row {
         background-color: white;
         border-radius: 10px;
@@ -84,6 +84,18 @@ nav {
             margin-bottom: 1px;
           }
         }
+      }
+    }
+    .links {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      .color-word {
+        color: #040C0E;
+        text-decoration: none;
+      }
+      .color-word:hover {
+        color: white;
+        text-decoration: underline;
       }
     }
   }
