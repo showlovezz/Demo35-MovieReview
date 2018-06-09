@@ -20,9 +20,8 @@
           </div>
           <div class="col-md-7">
             <h3 class="text-left"><%= @movie.title %></h3>
-            <p class="text-muted no_mb">劇情：</p>
-            <hr>
-            <p class="text-muted"><%= @movie.description %></p>
+            <%= render "reviews/show_review" %>
+            <%= render "reviews/form_review" %>
           </div>
         </div>
 

@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <%= form_for [@movie, @review] do |f| %>
+    <div class="form-group">
+      <%= f.number_field :rating, class: "form-control form-control-sm" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :comment, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary btn-sm" %>
+      <%= f.button "Cancel", type: :reset, class: "btn btn-secondary btn-sm" %>
+    </div>
+  <% end %>
+<% end %>

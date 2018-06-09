@@ -70,12 +70,18 @@ nav {
         border-radius: 10px;
         padding: 25px 25px 25px 25px;
         .col-md-7 {
-          .no_mb {
-            margin-bottom: 3px;
-          }
           hr {
             margin-top: 3px;
             margin-bottom: 3px;
+          }
+          p {
+            margin-bottom: 5px;
+            em {
+              font-size: 10px;
+            }
+          }
+          h6 {
+            margin-bottom: 1px;
           }
         }
       }

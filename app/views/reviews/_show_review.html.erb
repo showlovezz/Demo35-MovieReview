@@ -1,0 +1,16 @@
+<% @movie.reviews.each do |review| %>
+  <div>
+    <hr>
+    <p><%= review.rating %></p>
+    <h6><%= review.comment %></h6>
+    <p class="text-muted">
+      <em>
+        <%= review.user.email.split("@").first %>
+        <%= time_ago_in_words(review.created_at) %> ago -
+        <% if user_signed_in? %>
+          <%= link_to "Delete", movie_review_path(@movie, review), method: :delete %>
+        <% end %>
+      </em>
+    </p>
+  </div>
+<% end %>
