@@ -116,3 +116,18 @@ nav {
     }
   }
 }
+
+// user
+#section_sign_up, #section_log_in {
+  .row {
+    .col-md-6 {
+      background-color: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-top: 40px;
+      .form-control {
+        background-color: #FAF0E6;
+      }
+    }
+  }
+}
