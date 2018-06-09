@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path, notice: "電影新增成功"
     else
-      render "new", notice: "電影新增失敗"
+      render "new", alert: "電影新增失敗"
     end
   end
 
@@ -31,13 +31,13 @@ class MoviesController < ApplicationController
     if @movie.update(movie_params)
       redirect_to movies_path, notice: "電影修改成功"
     else
-      render "edit", notice: "電影修改失敗"
+      render "edit", alert: "電影修改失敗"
     end
   end
 
   def destroy
     @movie.destroy
-    redirect_to movies_path, notice: "電影已經刪除了"
+    redirect_to movies_path, alert: "電影已經刪除了"
   end
 
   private

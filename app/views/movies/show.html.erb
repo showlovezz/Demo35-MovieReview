@@ -1,13 +1,32 @@
-<h1>Movie Show Page</h1>
+<section id="section_movie_show">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
 
-<%= @movie.title %>
+        <div class="row">
+          <div class="col-md-5">
+            <%= image_tag @movie.image, class: "img-thumbnail rounded mx-auto d-block" %>
+            <ul class="list-group list-group list-group-flush mt-1">
+              <li class="list-group-item">
+                片長：<%= @movie.movie_length %>
+              </li>
+              <li class="list-group-item">
+                導演：<%= @movie.director %>
+              </li>
+              <li class="list-group-item">
+                評分：<%= @movie.rating %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-7">
+            <h3 class="text-left"><%= @movie.title %></h3>
+            <p class="text-muted no_mb">劇情：</p>
+            <hr>
+            <p class="text-muted"><%= @movie.description %></p>
+          </div>
+        </div>
 
-<%= @movie.description %>
-
-<%= @movie.movie_length %>
-
-<%= @movie.director %>
-
-<%= @movie.rating %>
-
-<%= image_tag @movie.image %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,22 +1,40 @@
-<h1>Movie page.</h1>
+<section id="section_movies_index">
+  <div class="container">
+    <div class="row">
 
-<% @movies.each do |movie| %>
+      <!-- jumbotron -->
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <h1 class="display-4">Your Favorite Movies Reviewed</h1>
+          <p class="lead">Hashtag hoodie mumblecore selfies. Authentic keffiyeh leggings Kickstarter, narwhal jean shorts XOXO Vice Austin cardigan. Organic drinking vinegar freegan pickled.</p>
+          <% if user_signed_in? %>
+            <p class="lead">
+              <%= link_to "Write A Movie Review", new_movie_path, class: "btn btn-primary btn-lg" %>
+            </p>
+          <% else %>
+            <p class="lead">
+              <%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-warning btn-lg" %>
+            </p>
+          <% end %>
+        </div>
+      </div>
 
-  <ul>
-    <li>
-      <%= movie.title %>
-      <%= movie.description %>
-      <%= movie.movie_length %>
-      <%= movie.director %>
-      <%= movie.rating %>
-      <%= image_tag movie.image %>
+      <!-- movie -->
+      <% @movies.each do |movie| %>
+        <div class="col-md-4">
+          <div class="card-deck">
+            <%= link_to movie_path(movie), class: "no_under_line" do %>
+              <div class="card mb-4" style="width: 348px;">
+                <%= image_tag movie.image, class: "card-img-top", style: "height: 500px;" %>
+                <div class="card-body text-center">
+                  <h5 class="card-title"><%= movie.title %></h5>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
 
-      <%= link_to "Show", movie_path(movie) %>
-      <%= link_to "Edit", edit_movie_path(movie) %>
-      <%= link_to "Delete", movie_path(movie), method: :delete, data: {confirm: "Are you sure?"} %>
-    </li>
-  </ul>
-
-<% end %>
-
-<%= link_to "Create Movie", new_movie_path %>
+    </div>
+  </div>
+</section>
